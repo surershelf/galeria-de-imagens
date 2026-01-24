@@ -28,9 +28,12 @@ public class Imagem {
     @Column (name = "data_criacao", nullable = false)
     private LocalDateTime createdAt;
 
+    private Boolean deleted;
+
     @PrePersist
     public void onCreate() {
         this.createdAt = LocalDateTime.now();
+        this.deleted = false;
     }
 
 }
